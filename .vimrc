@@ -1,30 +1,10 @@
 " Vundle vimrc
 set nocompatible              " be iMproved, required
-filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-"set rtp+=~/.vim/bundle/Vundle.vim
-"call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-"
-"let g:ycm_confirm_extra_conf = 0 
-
-" let Vundle manage Vundle, required
-"Plugin 'VundleVim/Vundle.vim'
-
-"Plugin 'Valloric/YouCompleteMe'
-
-" End configuration, makes the plugins available
-"call vundle#end()
 filetype plugin indent on
 
 set number
-let g:ConqueTermColor = 2
-let g:netrw_browse_split = 3
 colorscheme akbkuku
-
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
 "  File Explorer Stuff
 let g:netrw_liststyle=3		" Tree View
@@ -113,52 +93,6 @@ noremap <Tab> :call VexToggle(getcwd())<CR>
 noremap <Leader>` :call VexToggle("")<R>
 
 
-
-" Custom ConqueGDB Commands
-
-fun! OpenDebug(file)
-	if (a:file != " ")
-		let filename="bin/Debug/" . a:file
-	else
-		let filename=" "
-	endif
-
-	let g:debug_open = 1
-	tabnew
-	let g:debug_tab = tabpagenr()
-	exe "normal! :ConqueGdb " . filename . "\<CR>"
-	1wincmd w
-	q
-	sleep 100m
-	redraw
-endf
-
-fun! CloseDebug()
-	unlet g:debug_open
-	exe (g:debug_tab) . "tabclose"
-	unlet g:debug_tab
-endf
-
-fun! DebugToggle(file)
-  if exists("g:debug_open")
-    call CloseDebug()
-  else
-    call OpenDebug(a:file)
-  endif
-endf
-
-fun! GetFileLine(fn,ln)
-  return readfile(a:fn,'',a:ln)[a:ln-1]
-endfun
-
-noremap <F5> :call DebugToggle(" ")<CR>
-noremap <F6> :!./build.sh<CR>
-noremap <C-F5> :!./build.sh -n<CR> :call DebugToggle(GetFileLine("CMakeLists.txt",10))<CR>
-
-noremap <F2> :YcmCompleter GoToDefinition<CR>
-noremap <F3> :YcmCompleter GoToDeclaration<CR>
-noremap <F4> :%s/    /\t/g<CR>
-noremap <C-F4> :%s/  /\t/g<CR>
 
 set backspace=indent,eol,start
 
