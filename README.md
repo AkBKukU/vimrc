@@ -13,15 +13,15 @@ opening `netrw` to give you a file browser in the editor.
 If you're new to `netrw` here are some quick shortcut keys you can use in the 
 window:
 
- - `Enter` **Edit file** - Opens the highlighted file in the last used buffer.
- - `%` **Create new file** - Creates a new file in CWD, NOT the one you've 
+ - `Enter` - **Edit file** - Opens the highlighted file in the last used buffer.
+ - `%` - **Create new file** - Creates a new file in CWD, NOT the one you've 
  highlighted. This does open the file in the `netrw` window though and pressing 
  `<Tab>` will close it without warning or writing.
- - `v` **Open in vertical split** - Splits last active window vertically and opens 
+ - `v` - **Open in vertical split** - Splits last active window vertically and opens 
  file in new buffer.
- - `D` **Delete file** - Deletes the highlighted file.
- - `R` **Rename file** - Rename the highlighted file.
- - `x` **Open file** - Open the highlighted file with associated program.(ie 
+ - `D` - **Delete file** - Deletes the highlighted file.
+ - `R` - **Rename file** - Rename the highlighted file.
+ - `x` - **Open file** - Open the highlighted file with associated program.(ie 
  `xdg-open`, to view a PDF)
 
 
@@ -36,7 +36,7 @@ skipping some basic ones you probably memorized already:
  - `gg` - **Top of buffer**
  - `GG` - **Bottom of buffer**
  - `.` - **Repeat last edit** - Repeats the last thing you did which can include
- editing in Insert mode. Very useful to bulk changes with using the command 
+ editing in Insert mode. Very useful for bulk changes with using the command 
  line.
  - `/` & `n` - **Find & Next** - Find instances of a search and move to the next
  instance.
