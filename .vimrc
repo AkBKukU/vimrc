@@ -11,7 +11,7 @@ let g:netrw_liststyle=3		" Tree View
 let g:netrw_banner=0            " no banner
 let g:netrw_altv=1              " open files on right
 let g:netrw_preview=1           " open previews vertically
-
+let g:netrw_browse_split=4    " open files in previous window
 
 " ··········· netrw ···················· 
 fun! NetrwCrsrLn()
@@ -32,7 +32,7 @@ endf
 
 fun! ExOpen(dir)
   exe "Explore " . a:dir
-  let g:netrw_browse_split=0  " open files in current window
+ " let g:netrw_browse_split=0  " open files in current window
 endf
 
 fun! ExClose()
@@ -50,7 +50,6 @@ fun! VexToggle(dir)
 endf
 
 fun! VexOpen(dir)
-  let g:netrw_browse_split=4    " open files in previous window
   let vex_width = 27
 
   exe "Vexplore " . a:dir
