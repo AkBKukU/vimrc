@@ -103,13 +103,7 @@ highlight ColorColumn ctermbg=234
 setlocal spell spelllang=en_us
 
 set autoindent
-set noexpandtab
 set tabstop=8
 set shiftwidth=8
 
-autocmd FileType * set noexpandtab
-autocmd FileType * set autoindent
-
-autocmd FileType * set tabstop=8
-au FileType python setlocal noexpandtab
 

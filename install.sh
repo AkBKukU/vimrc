@@ -35,3 +35,15 @@ if [ "$?" == "1" ]
 then
 	cp -r .vim* ~/
 fi
+
+
+getYesNo "Do you want tabs to replace spaces for indents?"
+
+if [ "$?" == "1" ]
+then
+	rm ~/.vimrc
+	mv ~/.vimrc-tabs ~/.vimrc
+
+else
+	rm ~/.vimrc-tabs
+fi
