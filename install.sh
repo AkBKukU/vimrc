@@ -41,9 +41,5 @@ getYesNo "Do you want tabs to replace spaces for indents?"
 
 if [ "$?" == "1" ]
 then
-	rm ~/.vimrc
-	mv ~/.vimrc-tabs ~/.vimrc
-
-else
-	rm ~/.vimrc-tabs
+	cat tabs-only.vimrc >> ~/.vimrc
 fi
